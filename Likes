@@ -1,0 +1,8 @@
+//
+
+select user_id,count(photo_id) from likes group by user_id;
+
+//
+
+select p.id, (select count(c.id) from comments c where p.id=c.photo_id) as comments_count
+from photos p order by p.id;
