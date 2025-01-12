@@ -1,0 +1,10 @@
+
+// Photos 
+
+select user_id, count(id) from photos group by user_id;
+
+//
+
+select u.id, (select count(p.id) from photos p where u.id=p.user_id) as post_count
+from users u order by u.id;
+
