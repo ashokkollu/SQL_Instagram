@@ -1,0 +1,6 @@
+select u.id, u.username, count(f.follower_id) as following_count
+from users u
+left join follows f
+on u.id=f.follower_id
+group by u.id, u.username
+order by u.id;
